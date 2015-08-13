@@ -1,0 +1,14 @@
+﻿<ion-view view-title="Home" hide-back-button="true">
+    <ion-content class="padding">
+        <ion-refresher on-refresh="refresh(true)" spinner="android"></ion-refresher>
+        <ion-list>
+            <ion-item item="item" ng-repeat="item in items">
+                {{item.user_name}}<br />
+                {{item.message}}<br />
+                <span ng-if="item.url != ''"><img ng-src="{{item.url}}" /></span>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

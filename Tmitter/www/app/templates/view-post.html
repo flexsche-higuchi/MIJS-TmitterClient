@@ -1,0 +1,29 @@
+﻿<ion-view view-title="Post" hide-back-button="true">
+    <ion-content class="padding">
+        <form class="input-group input-group-lg" ng-submit="doPost()">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Message</span><br />
+                <textarea ng-model="model.message" rows="5"></textarea>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">
+                    Photo
+                    <span class="text-right">
+                        <button type="button" ng-click="photo()"
+                                class="btn button button-calm">
+                            写真
+                        </button>
+                    </span>
+                </span>
+                <br />
+                <img ng-src="{{model.photoFile}}" ng-if="model.photoFile != ''" style="width:100%" />
+            </label>
+            <div class="text-right">
+                <button type="submit"
+                        class="btn btn-default button button-calm">
+                    投稿
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
